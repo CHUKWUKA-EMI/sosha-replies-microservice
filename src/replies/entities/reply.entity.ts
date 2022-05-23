@@ -2,6 +2,7 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  Index,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -14,6 +15,7 @@ export class Reply {
   @Column('text', { nullable: false })
   reply: string;
 
+  @Index()
   @Column({ nullable: false })
   userId: string;
 
@@ -29,6 +31,7 @@ export class Reply {
   @Column({ nullable: true })
   userImageUrl?: string;
 
+  @Index()
   @Column({ nullable: false })
   commentId: string;
 
